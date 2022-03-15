@@ -34,34 +34,3 @@ class UserListSerializer(serializers.ModelSerializer):
             'email': instance['email'],
             'password': instance['password']
         }
-        
-''' class TestUserSerializer(serializers.Serializer):
-    
-        name = serializers.CharField(max_length=255)
-        email = serializers.EmailField()
-        
-        def validate_name(self, value):
-            if 'developer' in value:
-                raise serializers.ValidationError('ERROR, EL USUARIO NO PUEDE TENER ESE NOMBRE')
-                
-            return value
-        
-        def validate_email(self, value):
-            if value == '':
-                raise serializers.ValidationError('TIENE QUE INDICAR UN CORREO')
-          
-            return value
-        
-        def validate(self, data):
-            
-            return data
-        
-        def create(self, validate_data):
-            print(validate_data)
-            return User.objects.create(**validate_data)
-        
-        def update(self, instance, validate_data):
-            instance.name = validate_data.get('name', instance.name)
-            instance.email = validate_data.get('email', instance.email)
-            instance.save()
-            return instance '''
